@@ -1,19 +1,27 @@
+import { useState } from "react";
 import SearchForm from "./components/SearchForm";
 import WeatherBoard from "./components/WeatherBoard";
 import Day from "./models/day";
 
 function App() {
-  const days = [
-    new Day('Monday', 12),
-    new Day('Tuesday', 15)
+  const day = [
+    new Day('Monday', 'Riga', 12)
   ];
 
-  const onSearchHandler = (city: string) => { };
-  
+  const [cityData, setCityData] = useState<Day[]>([]);
+
+
+  const onSearchHandler = (city: string) => {
+    // get weather info from api\
+    // add to dom
+    // const newDay = new Day()
+    // setCityData(newDay);
+  };
+
   return (
     <div>
       <SearchForm onSearch={onSearchHandler} />
-      <WeatherBoard items={days} />
+      <WeatherBoard items={cityData} />
     </div>
   );
 }

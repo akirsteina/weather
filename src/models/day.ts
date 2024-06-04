@@ -1,12 +1,14 @@
 class Day {
     id: string;
     dayName: string;
+    cityName: string;
     degrees: number;
 
-    constructor(name: string, degrees: number) { 
+    constructor(name: string, city: string, degrees: number) { 
         this.dayName = name;
         this.degrees = degrees;
-        this.id = new Date().toISOString();
+        this.cityName = city;
+        this.id = `${new Date().toISOString()}${Math.random()}`;
     }
 }
 

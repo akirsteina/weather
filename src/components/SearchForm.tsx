@@ -11,9 +11,10 @@ const SearchForm: React.FC<{ onSearch: (text: string) => void }> = (props) => {
             alert('Empty!');
             return;
         } else {
-            alert(eneteredText);
+            console.log(eneteredText);
             searchInputRef.current!.value = '';
         }
+
         props.onSearch(eneteredText);
     };
 
